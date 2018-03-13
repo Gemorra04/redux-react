@@ -42,12 +42,12 @@
   },
   "devDependencies": {},
   "scripts": {
-    "dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot",
+    "webpack": "./node_modules/.bin/webpack src client_prod.js",
+    "webpack-dev": "./node_modules/.bin/webpack-dev-server --content-base src --inline --hot --port 9090 --config webpack.config.dev.js",
+    "webpack-dev-mock": "./node_modules/.bin/webpack-dev-server --inline --hot --port 9090 --content-base src --config webpack.config.mock.js",
     "json-server": "./node_modules/.bin/json-server --watch ./backend-mock-data/db_extends.json --middlewares loadFromCustom.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "json-server-reset-data": "node backend-mock-data/app.js",
-    "json-server-seperate": "./node_modules/.bin/json-server --watch ./backend-mock-data/db.json --middlewares loadFromCustom.js",
-    "json-server-mock": "./node_modules/.bin/webpack-dev-server --inline --hot --port 9090 --content-base src --config webpack.config.dev.js"
+    "json-server-seperate": "./node_modules/.bin/json-server --watch ./backend-mock-data/db.json --middlewares loadFromCustom.js"
   },
   "author": "",
   "license": "ISC"
