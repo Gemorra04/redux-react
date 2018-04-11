@@ -1,8 +1,7 @@
 import React from "react"
-import { connect } from "react-redux"
-import ModelList from "./ModelList"
-import Header from "./Header"
-import EditorFrame from "./EditorFrame"
+import {connect} from "react-redux"
+import Button from "material-ui/es/Button/Button";
+import Header from "./Header";
 
 @connect((store) => {
     return {
@@ -12,8 +11,6 @@ import EditorFrame from "./EditorFrame"
 export default class Layout extends React.Component {
 
     render() {
-        const {currentModel} = this.props;
-        const content = currentModel == null ? <ModelList />:<EditorFrame/>
-        return<div><Header/><div style={{marginTop:'70px'}}>{content}</div></div>
+        return<div><Header></Header></div>
     }
 }
